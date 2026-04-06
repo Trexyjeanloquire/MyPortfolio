@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 @Component({
-  selector: 'app-top-bar',
+  selector: 'app-about',
   standalone: true,
   imports: [CommonModule],
-  templateUrl: './top-bar.html',
-  styleUrl: './top-bar.css',
+  templateUrl: './about.html',
+  styleUrls: []
 })
-export class TopBar { }
+export class AboutComponent { }
