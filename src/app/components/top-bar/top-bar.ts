@@ -1,10 +1,32 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
+interface NavLink {
+  readonly label: string;
+  readonly href: string;
+}
+
 @Component({
   selector: 'app-top-bar',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './top-bar.html',
-  styleUrl: './top-bar.css',
+  styleUrls: [],
 })
-export class TopBar { }
+export class TopBarComponent {
+  readonly navLinks: readonly NavLink[] = [
+    { label: 'Stack', href: '#stack' },
+    { label: 'Experience', href: '#experience' },
+    { label: 'About', href: '#about' },
+    { label: 'Contact', href: '#contact' },
+  ];
+
+  isMenuOpen = false;
+
+  toggleMenu(): void {
+    this.isMenuOpen = !this.isMenuOpen;
+  }
+
+  closeMenu(): void {
+    this.isMenuOpen = false;
+  }
+}

@@ -1,12 +1,17 @@
-<nav>
-    <div class="nav-logo">
-        <div class="logo-dot"></div>&lt;AR /&gt;
+<nav class="portfolio-topbar">
+  <div class="mx-auto max-w-shell px-5 sm:px-7">
+    <div class="flex min-h-14 items-center justify-between gap-4 py-3">
+      <a href="#hero" class="nav-logo font-mono text-[13px] uppercase tracking-[0.3em] text-portfolio-cyan">
+        LOUIRE.PORTFOLIO
+      </a>
+
+      <div class="flex items-center gap-8">
+        @for (link of navLinks; track link.href) {
+        <a data-nav-link class="nav-link font-mono text-[11px] uppercase tracking-[0.18em]" [href]="link.href">
+          {{ link.label }}
+        </a>
+        }
+      </div>
     </div>
-    <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#stack">Stack</a>
-        <a href="#contact">Contact</a>
-        <a href="#contact" class="nav-hire">Hire Me</a>
-    </div>
+  </div>
 </nav>

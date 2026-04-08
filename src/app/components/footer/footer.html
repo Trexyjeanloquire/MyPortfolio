@@ -1,9 +1,14 @@
-<footer>
-    <div class="f-brand">Designed &amp; Built by <span>Jean Loquire</span> · 2025</div>
-    <div class="f-links">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#stack">Stack</a>
-        <a href="#contact">Contact</a>
+<footer class="portfolio-footer border-t border-white/8">
+  <div class="footer-shell mx-auto max-w-shell px-5 py-6 sm:px-7">
+    <p class="font-mono text-[10px] uppercase tracking-[0.14em] text-portfolio-muted">
+      <span class="text-portfolio-cyan">&#169;</span>
+      {{ currentYear }} Built with precision. All rights reserved.
+    </p>
+
+    <div class="footer-links">
+      @for (link of footerLinks; track link.href) {
+        <a [href]="link.href">{{ link.label }}</a>
+      }
     </div>
+  </div>
 </footer>

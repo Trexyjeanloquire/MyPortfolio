@@ -1,11 +1,24 @@
 import { Component } from '@angular/core';
-import { CommonModule } from '@angular/common';
+
+interface FooterLink {
+  readonly label: string;
+  readonly href: string;
+}
 
 @Component({
   selector: 'app-footer',
   standalone: true,
-  imports: [CommonModule],
+  imports: [],
   templateUrl: './footer.html',
   styleUrls: []
 })
-export class FooterComponent { }
+export class FooterComponent {
+  readonly currentYear = new Date().getFullYear();
+
+  readonly footerLinks: readonly FooterLink[] = [
+    { label: 'Stack', href: '#stack' },
+    { label: 'Experience', href: '#experience' },
+    { label: 'About', href: '#about' },
+    { label: 'Contact', href: '#contact' },
+  ];
+}
